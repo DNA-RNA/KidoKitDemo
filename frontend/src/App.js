@@ -1,27 +1,21 @@
 
-
-import logo from './images/logo.png';
+import {Route, Routes,BrowserRouter} from 'react-router-dom'
+import AnaSayfa from './pages/AnaSayfa';
 import './App.css';
+import KayitOl from './pages/KayitOl';
+import GirisYap from './pages/GirisYap';
 
 
 function App() {
   return (
-    <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-    </header>
-    <section className='Body'> 
-    <h3> Hoş geldiniz !</h3>
-    <p>Çocuğunuzu büyütürken artık yalnız değilsiniz!</p>
-    <p>Hemen kayıt olup günlük plana erişin</p>   
-    </section>
-
-    <section className='Button'>
-        <button type="button">Kayıt Ol</button>
-   </section>
-   <p> Zaten bir hesabınız var mı? <a>Giriş Yapın</a> </p>
+  <BrowserRouter>
+   <Routes>
+    <Route path='/' element={<AnaSayfa/>}/>
+    <Route path='/KayitOl' element={<KayitOl/>}/>
+    <Route path='/GirisYap' element={<GirisYap/>}/>
     
-  </div>
+   </Routes>
+  </BrowserRouter>
   );
 }
 
