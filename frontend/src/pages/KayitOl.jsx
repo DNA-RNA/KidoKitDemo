@@ -1,27 +1,79 @@
-import React from 'react'
+import React from "react";
 
-function KayitOl() {
-  return (
-    <div>
-      <form className="form-style-9">
-<ul>
-<li>
-    <input type="text" name="field1" className="field-style field-split align-left" placeholder="Name" />
-    <input type="email" name="field2" className="field-style field-split align-right" placeholder="Email" />
+class KayitOl extends React.Component {
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-</li>
-<li>
-    <input type="text" name="field3" className="field-style field-split align-left" placeholder="Phone" />
-    <input type="url" name="field4" className="field-style field-split align-right" placeholder="Website" />
-</li>
-<li>
-    <input type="text" name="field3" className="field-style field-split align-left" placeholder="Çocucğun Adı" />
-    <input type="url" name="field4" className="field-style field-split align-right" placeholder="Doğum tarihi" />
-</li>
-</ul>
-</form>
-    </div>
-  )
+  handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+
+    fetch("https://testapi.kidokit.com/api/account/register", {
+      method: "POST",
+      body: data,
+    });
+  }
+  render() {
+    return (
+      <div className="container">
+        <div className="title">Kayıt Olun</div>
+        <form onSubmit={this.handleSubmit} className="form">
+       <div className="form-box">
+      <span className="description">Adınız ve Soyadınız</span> 
+      <input type="text" name="fullName" placeholder="Adınız ve soyadınız" required />
+      </div>
+      <div className="form-box">
+      <span className="description">E-posta adresinizi yazınız</span> 
+      <input type="text" name="email"  placeholder="Mail adresini giriniz"/>
+     
+ 
+      </div>
+      <div className="form-box">
+      <span className="description">Bir şifre belirleyiniz</span> 
+      <input type="password" name="password"  placeholder="Sifre giriniz" />
+      
+      </div>
+      <div className="form-box">
+      <span className="description">Bir şifre belirleyiniz</span> 
+      <input type="password" name="password"  placeholder="Sifre giriniz" />
+      </div>
+      <div className="form-box">
+      <span className="description">Çocuğun ismi?</span> 
+      <input type="text" name="childName" placeholder="Çocuğun İsmi" />
+      </div>
+      <div className="form-box">
+      <span className="description">Çocuğun Doğum tarihi?</span> 
+      <input type="date" name="childBirthday"  placeholder="Çocuğun doğum tarihini giriniz" />
+      </div>
+      <div className="form-box">
+      <span className="description">Çocuğunuzun Cinsiyet?</span> 
+      <div className="category">
+        <label htmlFor="">
+          <span className="gender" name="childGender">Kız</span>
+        </label>
+        <label htmlFor="">
+          <span className="gender" name="childGender">Erkek</span>
+        </label>
+      </div>
+      </div>
+      
+      
+      
+     
+  <div className="button">
+            <button className="btn">Kayıt Ol</button>
+          </div>
+
+       
+       
+       
+      </form>
+      </div>
+      
+    );
+  }
 }
 
-export default KayitOl
+export default KayitOl;
