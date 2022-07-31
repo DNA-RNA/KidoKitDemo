@@ -17,9 +17,11 @@ class KayitOl extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="body">
+ <div className="container">
         <div className="title">Kayıt Olun</div>
         <form onSubmit={this.handleSubmit} className="form">
+       <div className="details">
        <div className="form-box">
       <span className="description">Adınız ve Soyadınız</span> 
       <input type="text" name="fullName" placeholder="Adınız ve soyadınız" required />
@@ -51,26 +53,27 @@ class KayitOl extends React.Component {
       <span className="description">Çocuğunuzun Cinsiyet?</span> 
       <div className="category">
         <label htmlFor="">
-          <span className="gender" name="childGender">Kız</span>
-        </label>
-        <label htmlFor="">
           <span className="gender" name="childGender">Erkek</span>
         </label>
+        <label htmlFor="">
+          <span className="gender" name="childGender">Kız</span>
+        </label>
       </div>
       </div>
+      <div className="form-box">
+      <span className="warning-text">Kayıt sonrası yeni çocuk kayıtları oluşturabilirsiniz</span>
+      </div>
+       </div>
       
-      
-      
-     
+       <div className="contract"><p> <a href="#"><b>Kullanım Koşullarını ve Gizlilik Sözleşmesini </b></a> okudum,kabul ediyorum.</p></div>
   <div className="button">
             <button className="btn">Kayıt Ol</button>
           </div>
-
-       
-       
-       
       </form>
       </div>
+
+      </div>
+     
       
     );
   }
