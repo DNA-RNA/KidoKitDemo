@@ -21,7 +21,7 @@ export default function AnaSayfa() {
           navigate('/kayitol')
         }}>Kayıt Ol</button>
    </section>
-   <p> Zaten bir hesabınız var mı? <a href='/girisyap'>Giriş Yapın</a> </p>
+   <p> Zaten bir hesabınız var mı? <a href='/girisyap' className='giris-link'>Giriş Yap</a> </p>
     
   </div>
   )
