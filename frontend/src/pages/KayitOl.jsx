@@ -31,42 +31,44 @@ class KayitOl extends React.Component {
       </div>
       <div className="form-box">
       <span className="description">E-posta adresinizi yazınız</span> 
-      <input type="text" name="email"  placeholder="Mail adresini giriniz"/>
+      <input type="text" name="email"  placeholder="Mail adresini giriniz"  required/>
      
  
       </div>
       <div className="form-box">
       <span className="description">Bir şifre belirleyiniz</span>
       <img className="password-vector-1" src={sifreVector} alt="sifre-vector" />  
-      <input type="password" name="password"  placeholder="Sifre giriniz" />
+      <input type="password" name="password"  placeholder="Sifre giriniz"   required/>
       
       </div>
       <div className="form-box">
       <span className="description">Bir şifre belirleyiniz</span>
       <img className="password-vector-2" src={sifreVector} alt="sifre-vector" /> 
-      <input type="password" name="password"  placeholder="Sifre giriniz" />
+      <input type="password" name="password"  placeholder="Sifre giriniz"  required />
       </div>
       <div className="form-box">
       <span className="description">Çocuğun ismi?</span> 
-      <input type="text" name="childName" placeholder="Çocuğun İsmi" />
+      <input type="text" name="childName" placeholder="Çocuğun İsmi"  required />
       </div>
       <div className="form-box">
       <span className="description">Çocuğun Doğum tarihi?</span> 
-      <input type="date" name="childBirthday"  placeholder="Çocuğun doğum tarihini giriniz" />
+      <input type="date" name="childBirthday"  placeholder="Çocuğun doğum tarihini giriniz"  required />
       </div>
       <div className="form-box">
+      <input type="radio" name="gender" id="radio-one" />
+      <input type="radio" name="gender" id="radio-two" />
       <span className="description">Çocuğunuzun Cinsiyet?</span> 
       <div className="category">
-        <label htmlFor="">
-          <span className="gender" name="childGender">Erkek</span>
+        <label htmlFor="radio-one">
+          <span className="gender-1 radio-1" name="childGender">Erkek</span>
         </label>
-        <label htmlFor="">
-          <span className="gender" name="childGender">Kız</span>
+        <label htmlFor="radio-two">
+          <span className="gender-2 radio-2" name="childGender">Kız</span>
         </label>
       </div>
       </div>
       <div className="form-box">
-      <img src={vektor} alt="vektor" />
+      <img src={vektor} className="warning-vector" alt="vektor" />
       <span className="warning-text">  Kayıt sonrası yeni çocuk kayıtları oluşturabilirsiniz</span>
       </div>
        </div>
