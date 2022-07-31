@@ -59,6 +59,7 @@
 	justify-content: center;
 	align-items: center;
 	background: #e4e3e7;
+	box-sizing: border-box;
 }
 .container{
 	
@@ -97,7 +98,6 @@ margin: 0.5rem;
 
 }
 .details .form-box .warning-text{
-	
 	font-weight: 400;
 	font-size: 15px;
 }
@@ -115,6 +115,21 @@ margin: 0.5rem;
 .details .form-box input:focus,
 .details .form-box input:valid{
 	border-color: #735EBB;
+}
+.details .form-box .password-vector-1{
+	position: absolute;
+	top: 420px;
+    left:745px;
+    padding: 0.25rem;
+}
+.details .form-box .password-vector-2{
+    position: absolute;
+    top: 420px;
+    right:410px;
+    padding: 0.25rem;
+   
+   
+
 }
 .details .form-box .category {
 	width: 12% ;
@@ -141,22 +156,25 @@ margin: 0.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 10px 32px;
 }
 .form .button .btn {
-
+    line-height: 24px;	
 	width: 240px;
 	height: 44px;
     padding: 10px 32px;
     border-radius: 22px;
-    font-size: 1.5rem;
+    font-size: 16px;
     color: white;
     background-color:  #735EBB;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	font-weight: 700;
 }
 .container .form .contract{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 20px;
 }
 .form .contract p {
 	font-weight: 500;
@@ -164,4 +182,8 @@ font-size: 21px;
 line-height: 27px;
 
 color: #826BD0;
+}
+.form .contract p a {
+	text-decoration: none;
+	color: #826BD0;
 }

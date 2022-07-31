@@ -1,4 +1,7 @@
 import React from "react";
+import vektor from '../images/Vector.png';
+import selected from '../images/Selected.png'
+import sifreVector from '../images/sifre-vektor.png';
 
 class KayitOl extends React.Component {
   constructor() {
@@ -33,12 +36,14 @@ class KayitOl extends React.Component {
  
       </div>
       <div className="form-box">
-      <span className="description">Bir şifre belirleyiniz</span> 
+      <span className="description">Bir şifre belirleyiniz</span>
+      <img className="password-vector-1" src={sifreVector} alt="sifre-vector" />  
       <input type="password" name="password"  placeholder="Sifre giriniz" />
       
       </div>
       <div className="form-box">
-      <span className="description">Bir şifre belirleyiniz</span> 
+      <span className="description">Bir şifre belirleyiniz</span>
+      <img className="password-vector-2" src={sifreVector} alt="sifre-vector" /> 
       <input type="password" name="password"  placeholder="Sifre giriniz" />
       </div>
       <div className="form-box">
@@ -61,12 +66,14 @@ class KayitOl extends React.Component {
       </div>
       </div>
       <div className="form-box">
-      <span className="warning-text">Kayıt sonrası yeni çocuk kayıtları oluşturabilirsiniz</span>
+      <img src={vektor} alt="vektor" />
+      <span className="warning-text">  Kayıt sonrası yeni çocuk kayıtları oluşturabilirsiniz</span>
       </div>
        </div>
       
-       <div className="contract"><p> <a href="#"><b>Kullanım Koşullarını ve Gizlilik Sözleşmesini </b></a> okudum,kabul ediyorum.</p></div>
-  <div className="button">
+       <div className="contract"> <img src={selected} alt="select-tik" /> <p>  <a href="#"><b>Kullanım Koşullarını ve Gizlilik Sözleşmesini </b></a> okudum,kabul ediyorum.</p>
+       </div>
+           <div className="button">
             <button className="btn">Kayıt Ol</button>
           </div>
       </form>
