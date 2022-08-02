@@ -3,6 +3,7 @@ import vektor from '../images/Vector.png';
 import selected from '../images/Selected.png'
 import sifreVector from '../images/sifre-vektor.png';
 
+
 class KayitOl extends React.Component {
   constructor() {
     super();
@@ -12,10 +13,16 @@ class KayitOl extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
+   
+    var result = Object.fromEntries(data);
+    var request = JSON.stringify(result);
 
-    fetch("https://testapi.kidokit.com/api/account/register", {
+    fetch("https://testapi.kidokit.com/api/account/v2/register", {
       method: "POST",
-      body: data,
+      body: request,
+      headers: {'Content-Type': 'application/json'}
+     
+
     });
   }
   render() {
@@ -23,9 +30,9 @@ class KayitOl extends React.Component {
       <div className="body">
  <div className="container">
         <div className="title">Kayıt Olun</div>
-        <form onSubmit={this.handleSubmit} className="form">
+        <form onSubmit={this.handleSubmit} className="form" id="form">
        <div className="details">
-       <div className="form-box">
+       <div  className="form-box">
       <span className="description">Adınız ve Soyadınız</span> 
       <input type="text" name="fullName" placeholder="Adınız ve soyadınız" required />
       </div>
@@ -55,8 +62,8 @@ class KayitOl extends React.Component {
       <input type="date" name="childBirthday"  placeholder="Çocuğun doğum tarihini giriniz"  required />
       </div>
       <div className="form-box">
-      <input type="radio" name="gender" id="radio-one" />
-      <input type="radio" name="gender" id="radio-two" />
+      <input type="radio" name="childGender" id="radio-one" />
+      <input type="radio" name="childGender" id="radio-two" />
       <span className="description">Çocuğunuzun Cinsiyet?</span> 
       <div className="category">
         <label htmlFor="radio-one">

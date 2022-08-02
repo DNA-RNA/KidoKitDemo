@@ -1,6 +1,8 @@
 import React from 'react'
+import {useState,useEffect} from 'react'
 
 function GirisYap() {
+ 
   return (
     <div>
       <div className="container-giris-yap">
