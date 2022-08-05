@@ -42,13 +42,13 @@ class KayitOl extends React.Component {
      
  
       </div>
-      <div className="form-box">
+      <div className="form-box form-box-password">
       <span className="description">Bir şifre belirleyiniz</span>
       <img className="password-vector-1" src={sifreVector} alt="sifre-vector" />  
       <input type="password" name="password"  placeholder="Sifre giriniz"   required/>
       
       </div>
-      <div className="form-box">
+      <div className="form-box form-box-password">
       <span className="description">Bir şifre belirleyiniz</span>
       <img className="password-vector-2" src={sifreVector} alt="sifre-vector" /> 
       <input type="password" name="password"  placeholder="Sifre giriniz"  required />
@@ -80,7 +80,9 @@ class KayitOl extends React.Component {
       </div>
        </div>
       
-       <div className="contract"> <img src={selected} alt="select-tik" /> <p>  <a href="#"><b>Kullanım Koşullarını ve Gizlilik Sözleşmesini </b></a> okudum,kabul ediyorum.</p>
+       <div className="contract"> 
+          <input className="contract-checkbox" type="checkbox" onChange={this.handleChangeChk} />
+          <p>  <a href="#"><b>Kullanım Koşullarını ve Gizlilik Sözleşmesini </b></a> okudum,kabul ediyorum.</p>
        </div>
            <div className="button">
             <button className="btn">Kayıt Ol</button>

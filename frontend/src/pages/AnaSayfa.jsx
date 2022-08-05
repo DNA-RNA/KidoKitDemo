@@ -12,8 +12,9 @@ export default function AnaSayfa() {
     </header>
     <section className='Body'> 
     <h3> Hoş geldiniz !</h3>
+    <br />
     <p>Çocuğunuzu büyütürken artık yalnız değilsiniz!</p>
-    <p>Hemen kayıt olup günlük plana erişin</p>   
+    <p>Hemen kayıt olup Günlük Plan'a erişin</p>   
     </section>
 
     <section className='Button'>
@@ -21,7 +22,7 @@ export default function AnaSayfa() {
           navigate('/kayitol')
         }}>Kayıt Ol</button>
    </section>
-   <p> Zaten bir hesabınız var mı? <a href='/girisyap' className='giris-link'>Giriş Yap</a> </p>
+   <p className='p-giris'> Zaten bir hesabınız var mı? <a href='/girisyap' className='giris-link'>Giriş Yap</a> </p>
     
   </div>
   )

@@ -7,7 +7,7 @@ function GirisYap() {
     <div>
       <div className="container-giris-yap">
       <h1 className='header-giris-yap'>Giriş Yap</h1>
-      <form action="">
+      <form action="" className='form-giris'>
       <span className="form-title">E-posta adresinizi yazınız</span> 
       <input type="email" name="email" required />
       <span className="form-title">Şifrenizi Giriniz</span> 
