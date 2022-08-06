@@ -1,6 +1,5 @@
 import React from "react";
 import vektor from '../images/Vector.png';
-import selected from '../images/Selected.png'
 import sifreVector from '../images/sifre-vektor.png';
 
 
@@ -15,6 +14,9 @@ class KayitOl extends React.Component {
     const data = new FormData(event.target);
    
     var result = Object.fromEntries(data);
+    if(result.childGender=="on"){
+      result.childGender = 1;
+    }
     var request = JSON.stringify(result);
 
     fetch("https://testapi.kidokit.com/api/account/v2/register", {
