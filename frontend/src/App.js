@@ -1,9 +1,9 @@
 
 import {Route, Routes,BrowserRouter} from 'react-router-dom'
 import AnaSayfa from './pages/AnaSayfa';
-import './App.css';
-import './KayitOl.css'
-import './GirisYap.css'
+import './styles/App.css';
+import './styles/KayitOl.css'
+import './styles/GirisYap.css'
 import KayitOl from './pages/KayitOl';
 import GirisYap from './pages/GirisYap';
 

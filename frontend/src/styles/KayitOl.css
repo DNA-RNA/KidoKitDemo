@@ -38,7 +38,7 @@
     padding:0 14rem;
     margin: 0.5rem;
     flex-grow: 2;
-    flex-basis: 650px;  
+    flex-basis: 550px;  
     
   }
   /* form başlıkları*/
@@ -76,14 +76,15 @@
   .details .form-box-password .password-vector-1 {
     position: absolute;
     padding: 0.25rem;
-    top: 95px;
-    right: 240px;
+   right: 240px;
+   bottom: 25px;
+   
    
   }
-  .details .form-box .password-vector-2 {
+  .details .form-box-password .password-vector-2 {
     position: absolute;
-    top: 435px;
-    right: 410px;
+    right: 240px;
+    bottom: 25px;
     padding: 0.25rem;
   }
   /* cinsiyet section*/
@@ -154,7 +155,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 20px;
-   
+ 
   }
   .form .contract .contract-checkbox{
     width: 36px;
@@ -167,11 +168,11 @@
     font-weight: 500;
     font-size: 21px;
     line-height: 27px;
-    color: #826bd0;
+    color: #826bd0;  
   }
   .form .contract p a {
     text-decoration: none;
-    color: #826bd0;
+    color: #826bd0; 
   }
 
  

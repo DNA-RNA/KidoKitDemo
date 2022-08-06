@@ -15,7 +15,10 @@ class KayitOl extends React.Component {
    
     var result = Object.fromEntries(data);
     if(result.childGender=="on"){
-      result.childGender = 1;
+      result.childGender = 0;
+    }
+    else {
+      result.childGender =1;
     }
     var request = JSON.stringify(result);
 
