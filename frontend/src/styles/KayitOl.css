@@ -78,7 +78,8 @@
     padding: 0.25rem;
    right: 240px;
    bottom: 25px;
-   
+   cursor: pointer;
+  
    
   }
   .details .form-box-password .password-vector-2 {
@@ -86,6 +87,8 @@
     right: 240px;
     bottom: 25px;
     padding: 0.25rem;
+    cursor: pointer;
+    
   }
   /* cinsiyet section*/
   .details .form-box .category {

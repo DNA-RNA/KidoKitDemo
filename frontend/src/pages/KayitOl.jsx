@@ -1,14 +1,24 @@
 import React from "react";
 import vektor from '../images/Vector.png';
 import sifreVector from '../images/sifre-vektor.png';
-
+import sifreVisibleVector from '../images/sifre-vektor-visible.png';
+import   useState  from 'react';
 
 class KayitOl extends React.Component {
+ 
+  state = {
+    isShown : false
+  }
+  togglePassword  =() =>{
+    const {isShown} = this.state;
+    this.setState({isShown : !isShown});
+  }
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
+ 
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -31,6 +41,7 @@ class KayitOl extends React.Component {
     });
   }
   render() {
+    const {isShown} = this.state;
     return (
       <div className="body">
  <div className="container">
@@ -49,14 +60,14 @@ class KayitOl extends React.Component {
       </div>
       <div className="form-box form-box-password">
       <span className="description">Bir şifre belirleyiniz</span>
-      <img className="password-vector-1" src={sifreVector} alt="sifre-vector" />  
-      <input type="password" name="password"  placeholder="Sifre giriniz"   required/>
+      <img className="password-vector-1" src={ isShown ?  sifreVisibleVector : sifreVector } alt="sifre-vector"  onClick={this.togglePassword}/>  
+      <input  type={(isShown) ? "text" : "password"} name="password"  placeholder="Sifre giriniz"   required/>
       
       </div>
       <div className="form-box form-box-password">
       <span className="description">Bir şifre belirleyiniz</span>
-      <img className="password-vector-2" src={sifreVector} alt="sifre-vector" /> 
-      <input type="password" name="password"  placeholder="Sifre giriniz"  required />
+      <img className="password-vector-2"  src={ isShown ?  sifreVisibleVector : sifreVector } alt="sifre-vector" onClick={this.togglePassword}/> 
+      <input type={(isShown) ? "text" : "password"}  name="password"  placeholder="Sifre giriniz"  required />
       </div>
       <div className="form-box">
       <span className="description">Çocuğun ismi?</span> 
