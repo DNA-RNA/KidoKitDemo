@@ -19,12 +19,6 @@ class GirisYap extends React.Component  {
       headers: {'Content-Type': 'application/json'}
      
 
-    }).then(response=>{
-      console.log(response)
-      if(response.ok){
-        return response.json();
-      }
-      else console.log(new Error("Bir şeyler yanlış gitti"));
     });
   }
   render() {

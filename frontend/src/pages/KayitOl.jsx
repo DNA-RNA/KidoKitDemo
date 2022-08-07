@@ -7,11 +7,38 @@ import   useState  from 'react';
 class KayitOl extends React.Component {
  
   state = {
-    isShown : false
+    isShown : false,
+    password:"",
+    passwordLenght : false,
+    containsNumbers : false,
+    isUpperCase: false,
+    containsSymbols : false
+  }
+ 
+  checkForUpperCase = (string) =>{
+   var matches = string.match(/[A-Z]/);
+   this.setState({
+    isUpperCase : matches != null ? true : false
+   });
+  }
+  checkForNumbers = (string) =>{
+    var matches = string.match(/\d+/g);
+    this.setState({
+      containsNumbers : matches != null ? true : false
+    })
   }
   togglePassword  =() =>{
     const {isShown} = this.state;
     this.setState({isShown : !isShown});
+  }
+  handleChange = input => e =>{
+    let targetValue = e.target.value
+    this.checkForNumbers(targetValue);
+    this.checkForUpperCase(targetValue);
+   
+    this.setState({
+      passwordLenght: targetValue.lenght > 7 && targetValue.lenght < 30 ? true : false
+    })
   }
   constructor() {
     super();
@@ -42,11 +69,12 @@ class KayitOl extends React.Component {
   }
   render() {
     const {isShown} = this.state;
+    let {passwordLenght, containsNumbers,checkForUpperCase} = this.state;
     return (
       <div className="body">
  <div className="container">
         <div className="title">Kayıt Olun</div>
-        <form onSubmit={this.handleSubmit} className="form" id="form">
+        <form onSubmit={this.handleSubmit} className="form">
        <div className="details">
        <div  className="form-box">
       <span className="description">Adınız ve Soyadınız</span> 
@@ -61,13 +89,27 @@ class KayitOl extends React.Component {
       <div className="form-box form-box-password">
       <span className="description">Bir şifre belirleyiniz</span>
       <img className="password-vector-1" src={ isShown ?  sifreVisibleVector : sifreVector } alt="sifre-vector"  onClick={this.togglePassword}/>  
-      <input  type={(isShown) ? "text" : "password"} name="password"  placeholder="Sifre giriniz"   required/>
+      <input onChange ={this.handleChange("password")} type={(isShown) ? "text" : "password"} name="password"  placeholder="Sifre giriniz"   required/>
+      <div className="password-warning">
+        <div className={passwordLenght ? "green" : null}>8 ila 30 karakterden oluşmalı</div>
+        <div className={containsNumbers ? "green" : "red"}>En az bir tane rakam bulunmalı</div>
+        <div  className={checkForUpperCase ? "green" : "red"}>En az bir tane özel karakter bulunmalı</div>
+        <div>En az bir tane büyük harf bulunmalı</div>
+
+      </div>
       
       </div>
       <div className="form-box form-box-password">
       <span className="description">Bir şifre belirleyiniz</span>
       <img className="password-vector-2"  src={ isShown ?  sifreVisibleVector : sifreVector } alt="sifre-vector" onClick={this.togglePassword}/> 
       <input type={(isShown) ? "text" : "password"}  name="password"  placeholder="Sifre giriniz"  required />
+      <div className="password-warning">
+        <div className={passwordLenght ? "green" : "red"}>8 ila 30 karakterden oluşmalı</div>
+        <div className={containsNumbers ? "green" : "red"}>En az bir tane rakam bulunmalı</div>
+        <div  className={checkForUpperCase ? "green" : "red"}>En az bir tane özel karakter bulunmalı</div>
+        <div>En az bir tane büyük harf bulunmalı</div>
+
+      </div>
       </div>
       <div className="form-box">
       <span className="description">Çocuğun ismi?</span> 
