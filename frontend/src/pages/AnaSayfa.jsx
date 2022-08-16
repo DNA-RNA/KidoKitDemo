@@ -14,7 +14,7 @@ export default function AnaSayfa() {
     <h3> Hoş geldiniz !</h3>
     <br />
     <p>Çocuğunuzu büyütürken artık yalnız değilsiniz!</p>
-    <p>Hemen kayıt olup Günlük Plan'a erişin</p>   
+    <p>Hemen kayıt olup Günlük Plan'aa erişin</p>   
     </section>
 
     <section className='Button'>
